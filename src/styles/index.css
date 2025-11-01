@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Montserrat, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #fff;
+  background-color: #191919;
+
+  /* Основные цвета */
+  --color-primary: #4f8cff;
+  --color-primary-dark: #1453c4;
+  --color-secondary: #ffbe00;
+  --color-accent: #e46262;
+
+  /* Фоновые цвета */
+  --color-bg: #242424;
+  --color-bg-light: #363636;
+  --color-bg-dark: #181818;
+
+  /* Цвета текста */
+  --color-text: #ffffff;
+  --color-text-secondary: #bbbbbb;
+  --color-text-muted: #888888;
+
+  /* Цвета для состояния */
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+  --color-warning: #f59e42;
+  --color-info: #3b82f6;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 30px 80px;
+  box-sizing: border-box;
+}
