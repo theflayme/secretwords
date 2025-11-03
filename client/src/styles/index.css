@@ -38,7 +38,32 @@
 }
 
 body {
+  height: 90vh;
   margin: 0;
   padding: 30px 80px;
   box-sizing: border-box;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: confetti-piece 2s ease-in-out infinite;
+}
+
+@keyframes confetti-piece {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding: 15px 30px;
+  }
 }
