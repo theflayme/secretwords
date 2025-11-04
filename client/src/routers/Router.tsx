@@ -1,34 +1,52 @@
-import { createBrowserRouter } from 'react-router-dom'
-
-import HomePage from '../pages/HomePage'
-import UsersPage from '../pages/UsersPage'
-import LogInPage from '../pages/Auth/LogInPage'
-import SignUpPage from '../pages/Auth/SignUpPage'
-import GamePage from '../pages/GamePage'
+import { createBrowserRouter } from "react-router-dom";
+import Home from "@/pages/Home";
+import LogIn from "@/pages/Auth/LogIn";
+import Header from "@/components/layout/Header";
+import Game from "@/pages/Game/Game";
+import SearchRoom from "@/pages/Game/SearchRoom";
+import Raiting from "@/pages/Raiting";
+import SignUp from "@/pages/Auth/SignUp";
+import CreateRoom from "@/pages/Game/CreateRoom";
 
 const router = createBrowserRouter([
     {
-        path: '/',
-        element: <HomePage />,
+        path: "/",
+        element: <Header />,
         children: [
             {
-                path: 'users',
-                element: <UsersPage />,
+                path: "/",
+                element: <Home />
             },
             {
-                path: 'login',
-                element: <LogInPage />
+                path: "/login",
+                element: <LogIn />
             },
             {
-                path: 'signup',
-                element: <SignUpPage />
+                path: "/game",
+                element: <Game />
             },
             {
-                path: 'game',
-                element: <GamePage />
+                path: "/searchroom",
+                element: <SearchRoom />
+            },
+            {
+                path: "/raiting",
+                element: <Raiting />
+            },
+            {
+                path: "/signup",
+                element: <SignUp />
+            },
+            {
+                path: "/createroom",
+                element: <CreateRoom />
             }
+            // {
+            //     path: "/profile",
+            //     element: <Profile />
+            // }
         ]
-    }
-])
+    },
+]);
 
-export default router
+export default router;

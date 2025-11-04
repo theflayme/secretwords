@@ -1,15 +1,12 @@
 import { useEffect } from "react";
 
-type UseKeyBoardParams = {
+interface UseKeyBoardParams {
   isSolved: boolean;
   handleBackspace: () => void;
   handleEnter: () => void;
   handleLetter: (letter: string) => void;
-};
+}
 
-/**
- * Custom keyboard event listener for Wordle-like game logic.
- */
 const useKeyBoard = ({
   isSolved,
   handleBackspace,

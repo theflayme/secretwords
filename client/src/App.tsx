@@ -1,15 +1,16 @@
-
 import { RouterProvider } from "react-router-dom"
-import Router from "./routers/Router"
-import { CookiesProvider } from 'react-cookie'
+import { ThemeProvider } from "@/components/ThemeProvider"
+import router from "@/routers/router"
+import { CookiesProvider, Cookies } from "react-cookie"
 
-const App = () => {
+function App() {
+  const cookies = new Cookies();
   return (
-    <>
-      <CookiesProvider>
-        <RouterProvider router={Router} />
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <CookiesProvider cookies={cookies}>
+        <RouterProvider router={router} />
       </CookiesProvider>
-    </>
+    </ThemeProvider>
   )
 }
 

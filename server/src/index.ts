@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 import cors from "cors";
 import authRoutes from "./routes/auth.js";
 import profileRoutes from "./routes/profile.js";
+import cookieParser from "cookie-parser"; 
+import raitingRoutes from "./routes/raiting.js";
+import roomRoutes from "./routes/room.js";
+import gameRoutes from "./routes/game.js";
 
 const app = express();
 
@@ -13,6 +17,7 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -21,6 +26,9 @@ const MONGO_URI = "mongodb://mongo:27017/myapp";
 
 app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
+app.use("/raiting", raitingRoutes);
+app.use("/room", roomRoutes);
+app.use("/game", gameRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200).send("Hello World");
